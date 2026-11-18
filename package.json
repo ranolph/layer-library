@@ -1,0 +1,19 @@
+{
+  "name": "layer-library",
+  "version": "1.0.6",
+  "private": true,
+  "type": "module",
+  "description": "A self-hosted STL, OBJ and 3MF library for your local network",
+  "scripts": {
+    "build": "esbuild app/frontend/viewer.js --bundle --minify --format=esm --outfile=app/static/viewer.bundle.js --legal-comments=eof",
+    "dev": "python -m uvicorn app.main:app --host 127.0.0.1 --port 8777 --reload --no-proxy-headers",
+    "test": "node tests/test_obj_viewer.mjs && node tests/test_frontend_studio.mjs"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "license": "MIT"
+}

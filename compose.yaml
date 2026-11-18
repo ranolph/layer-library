@@ -1,0 +1,26 @@
+services:
+  layer-library:
+    build:
+      context: .
+    image: layer-library:1.0.6
+    pull_policy: build
+    restart: unless-stopped
+    ports:
+      - "${LAYER_LIBRARY_BIND:-0.0.0.0}:${LAYER_LIBRARY_PORT:-8777}:8080"
+    environment:
+      DATA_DIR: /data
+      MAX_UPLOAD_MB: "${MAX_UPLOAD_MB:-250}"
+      BACKUP_SERVICE_ORIGIN: "${BACKUP_SERVICE_ORIGIN:-}"
+    volumes:
+      - library-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  library-data:
+    name: "${LAYER_LIBRARY_VOLUME:-layer-library-data}"
