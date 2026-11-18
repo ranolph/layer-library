@@ -1,7 +1,7 @@
 # Runtime dependency versions used by the verified release.
 annotated-doc==0.0.5
 annotated-types==0.8.0
-anyio==4.15.1
+anyio==4.16.0
 click==8.5.0
 defusedxml==0.7.1
 fastapi==0.162.0
