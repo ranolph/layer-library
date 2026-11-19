@@ -4,6 +4,28 @@ A self-hosted home for your 3D printing models. Upload STL, OBJ and 3MF files, b
 
 Layer Library runs on TrueNAS or any host with Docker Compose. It also runs directly with Python. This is the portable **1.0.6** release, incorporating the OBJ, preview-image, Bambu Studio and Featured updates from the original application.
 
+## Screenshots
+
+Layer Library shares the warm background, sage accents, typography and panel spacing of Form Studio and Solid Studio. The screenshots below use a separate demonstration library with sample models. **New installations start empty; these models are not preloaded or included in the application.**
+
+### Library workspace
+
+![Layer Library workspace with its coordinated Studio header, Featured navigation and model cards](docs/screenshots/layer-library-workspace.jpg)
+
+Browse your models visually, search the library and use the star button to keep favourites in Featured.
+
+### Model details
+
+![Layer Library model details with an editable title, collection, tags and notes](docs/screenshots/layer-library-model-details.jpg)
+
+Edit a model's title, collection, tags and notes while keeping its original file available to download or open in Bambu Studio.
+
+### Collections
+
+![Layer Library collections view with organised sample models and matching Studio controls](docs/screenshots/layer-library-collections.jpg)
+
+Group related models into collections while keeping tags, notes and attached print files with each model.
+
 ## What it does
 
 - Upload up to ten STL, OBJ or model 3MF files at a time, with duplicate-file detection.
@@ -28,7 +50,7 @@ docker compose up -d --build
 docker compose ps
 ```
 
-Open **http://localhost:8777** on that computer, or `http://your-server-hostname:8777` from another device on the same network. The first installation starts with an empty library. Choose **Upload models** to add your own files, then use the star button to curate Featured.
+Open **http://localhost:8777** on that computer, or `http://your-server-hostname:8777` from another device on the same network. The first installation starts with an empty library. Choose **Add models** to add your own files, then use the star button to curate Featured.
 
 The image is built locally from this repository; no pre-published image is required. The 3D viewer is already bundled, so you do not need Node.js or an npm build to run the app. Initial image construction downloads the Python base image and pinned Python dependencies. Normal local browsing and model storage do not require an internet connection.
 
@@ -112,3 +134,5 @@ Commit changes to both `app/frontend/viewer.js` and its generated `app/static/vi
 Project code is available under the [MIT licence](LICENSE). Bundled dependencies retain their own notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/`. You retain responsibility for the rights to any models you upload or redistribute.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for changes and [SECURITY.md](SECURITY.md) for the access model and reporting issues.
+
+[GitHub · ranolph](https://github.com/ranolph)

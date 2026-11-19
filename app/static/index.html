@@ -3,31 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24291f">
+  <meta name="theme-color" content="#f1efeb">
   <meta name="color-scheme" content="light">
   <title>Layer Library</title>
-  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg?v=20261119-studio">
   <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/studio.css?v=20261119-studio">
 </head>
-<body>
+<body data-layer-studio="20261119">
   <div id="bootScreen" class="boot-screen" role="status">
-    <div class="brand-mark large" aria-hidden="true"><span></span><span></span><span></span></div>
+    <img class="studio-boot-icon" src="/static/icon.svg?v=20261119-studio" width="64" height="64" alt="">
     <p>Opening your library…</p>
     <p id="bootError" class="boot-error" hidden></p>
     <button id="bootRetry" class="button secondary" hidden>Try again</button>
   </div>
 
   <div id="app" class="app-shell" hidden>
+    <header class="topbar app-header">
+      <a class="brand" href="/" aria-label="Layer Library home"><img src="/static/icon.svg?v=20261119-studio" width="37" height="37" alt=""><span>Layer <b>Library</b></span></a>
+      <span class="header-divider" aria-hidden="true"></span>
+      <button id="menuButton" class="icon-button mobile-menu" aria-label="Open navigation"><i data-icon="menu"></i></button>
+      <div class="breadcrumb"><strong id="breadcrumbTitle">Featured</strong></div>
+      <div class="topbar-spacer"></div>
+      <button type="button" data-site-backup="layer-library" class="button secondary small-button site-backup-button" hidden aria-label="Back up to Google Drive" title="Back up to Google Drive"><i data-icon="upload"></i><span>Back up to Google Drive</span></button>
+      
+      <button id="refreshButton" class="icon-button" aria-label="Refresh library" title="Refresh"><i data-icon="refresh"></i></button>
+      <button id="addModelsButton" class="button primary" aria-label="Add models" title="Add models"><i data-icon="plus"></i><span>Add models</span></button>
+    </header>
     <button id="sidebarScrim" class="sidebar-scrim" aria-label="Close navigation"></button>
     <aside class="sidebar" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="Layer Library home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Layer<br><strong>Library</strong></span></a>
-      <div class="sidebar-label">WORKSPACE</div>
+      
+      <div class="sidebar-label workspace-label">Workspace</div>
       <nav class="primary-nav">
         <button id="navFeatured" class="nav-button active" aria-current="page"><i data-icon="star"></i><span>Featured</span><span id="navFeaturedCount" class="nav-count">0</span></button>
         <button id="navLibrary" class="nav-button"><i data-icon="grid"></i><span>All models</span><span id="navModelCount" class="nav-count">0</span></button>
         <button id="navTrash" class="nav-button"><i data-icon="trash"></i><span>Trash</span><span id="navTrashCount" class="nav-count" hidden></span></button>
       </nav>
-      <div class="sidebar-label collection-heading">COLLECTIONS <span id="collectionCount"></span></div>
+      <div class="sidebar-label collection-heading">Collections <span id="collectionCount"></span></div>
       <nav id="collectionNav" class="collection-nav" aria-label="Collections"></nav>
       <div class="sidebar-spacer"></div>
       <button id="printerQuick" class="printer-quick"><span class="printer-icon"><i data-icon="printer"></i></span><span><strong id="printerQuickName">Bambu P2S</strong><small id="printerQuickStatus">Use Bambu Studio</small></span><i data-icon="chevron-right"></i></button>
@@ -36,17 +48,10 @@
     </aside>
 
     <main class="main">
-      <header class="topbar">
-        <button id="menuButton" class="icon-button mobile-menu" aria-label="Open navigation"><i data-icon="menu"></i></button>
-        <div class="breadcrumb"><span>Workspace</span><i data-icon="chevron-right"></i><strong id="breadcrumbTitle">Featured</strong></div>
-        <div class="topbar-spacer"></div>
-        <button type="button" data-site-backup="layer-library" class="button secondary small-button site-backup-button" hidden>Back up to Google Drive</button>
-        <div class="local-indicator"><span class="status-dot"></span><span>Local workspace</span></div>
-        <button id="refreshButton" class="icon-button" aria-label="Refresh library" title="Refresh"><i data-icon="refresh"></i></button>
-      </header>
+      
 
       <section id="libraryView" class="workspace-view">
-        <div class="page-heading"><div><span id="pageEyebrow" class="eyebrow">YOUR FEATURED MODELS</span><h1 id="pageTitle">Featured</h1><p id="librarySummary" class="muted">Loading your featured models…</p></div><button id="addModelsButton" class="button primary"><i data-icon="plus"></i>Add models</button></div>
+        <div class="page-heading"><div><span id="pageEyebrow" class="eyebrow">YOUR FEATURED MODELS</span><h1 id="pageTitle">Featured</h1><p id="librarySummary" class="muted">Loading your featured models…</p></div></div>
         <div id="libraryStats" class="stat-strip"><div><i data-icon="box"></i><strong id="statModels">—</strong><span>models</span></div><div><i data-icon="layers"></i><strong id="statJobs">—</strong><span>print files</span></div><div><i data-icon="storage"></i><strong id="statStorage">—</strong><span>stored</span></div><span class="stat-note">STL · OBJ · 3MF</span></div>
         <div class="library-toolbar">
           <div class="search-field"><i data-icon="search"></i><input id="searchInput" type="search" placeholder="Search models, tags or notes…" aria-label="Search models"><kbd>/</kbd></div>
@@ -75,6 +80,7 @@
           <div class="settings-side"><section class="panel status-panel"><div class="panel-heading"><h2>Connection</h2><button id="refreshPrinterButton" class="icon-button" aria-label="Refresh printer status" hidden><i data-icon="refresh"></i></button></div><div id="printerStatusContent" class="printer-status-content"><span class="status-dot muted-dot"></span><strong>Managed in Bambu Studio</strong><p>View printer status in Bambu Studio or Bambu Handy.</p></div><button id="resetTrustButton" class="button danger-quiet small-button reset-trust" type="button" hidden><i data-icon="rotate"></i>Reset saved certificate</button></section><section class="note-panel"><i data-icon="info"></i><h3>From model to printer</h3><ol><li>Choose <strong>Open in Bambu Studio</strong> on a model, then click the ready link.</li><li>Allow your browser to open the desktop app. In Studio, approve the file from your own library if prompted.</li><li>Select the P2S, filament and print settings, then slice and send from Studio.</li></ol><p>Bambu Studio and its Network Plug-in must be installed on the computer. Your computer must be able to reach this library.</p><a class="text-link" href="https://bambulab.com/en/download/studio" target="_blank" rel="noopener noreferrer">Download Bambu Studio</a></section></div>
         </div>
       </section>
+      <footer class="studio-footer"><span>STL · OBJ · 3MF</span><a href="https://github.com/ranolph" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile for ranolph">GitHub · ranolph</a></footer>
       <div id="globalDropOverlay" class="global-drop-overlay" hidden><div><i data-icon="upload"></i><h2>Drop your models here</h2><p>STL, OBJ and 3MF files · add several at once</p></div></div>
     </main>
   </div>

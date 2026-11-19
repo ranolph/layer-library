@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Studio appearance
+
+- Matched Form Studio and Solid Studio typography, colours, header alignment,
+  panel spacing, controls and menus across desktop and smaller screens.
+- Added a coordinated layered icon and favicon, plus the GitHub profile link.
+- Added README screenshots from a separate demonstration library. Fresh
+  installations remain empty.
+
 ## 1.0.6 — Public source package — 2026-11-18
 
 - Prepared a standalone, empty-library installation with portable Docker
