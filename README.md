@@ -6,11 +6,11 @@ Layer Library runs on TrueNAS or any host with Docker Compose. It also runs dire
 
 ## Screenshots
 
-Layer Library shares the warm background, sage accents, typography and panel spacing of Form Studio and Solid Studio. The screenshots below use a separate demonstration library with sample models. **New installations start empty; these models are not preloaded or included in the application.**
+Layer Library uses a pale lavender page background, pure white panels and neutral controls. Small purple accents match its icon, while the typography, headers and panel spacing remain consistent with Form Studio and Solid Studio. The GitHub link follows the complete workspace at the bottom of the page on mobile. The screenshots below use a separate demonstration library with sample models. **New installations start empty; these models are not preloaded or included in the application.**
 
 ### Library workspace
 
-![Layer Library workspace with its coordinated Studio header, Featured navigation and model cards](docs/screenshots/layer-library-workspace.jpg)
+![Layer Library with white panels, neutral controls and a pale lavender page background](docs/screenshots/layer-library-workspace.jpg)
 
 Browse your models visually, search the library and use the star button to keep favourites in Featured.
 
@@ -22,9 +22,15 @@ Edit a model's title, collection, tags and notes while keeping its original file
 
 ### Collections
 
-![Layer Library collections view with organised sample models and matching Studio controls](docs/screenshots/layer-library-collections.jpg)
+![Layer Library collections view with organised sample models, white cards and neutral Studio controls](docs/screenshots/layer-library-collections.jpg)
 
 Group related models into collections while keeping tags, notes and attached print files with each model.
+
+### Mobile library
+
+<img src="docs/screenshots/layer-library-mobile.jpg" alt="Layer Library on a phone, with white cards, subtle purple accents and the GitHub link below the last model cards" width="390">
+
+The page scrolls through every model before reaching the GitHub footer. Printer settings follow the same layout.
 
 ## What it does
 

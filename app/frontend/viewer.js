@@ -85,14 +85,14 @@ export class ModelViewer {
     this.loadId = 0;
     this.controller = null;
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color('#eceae3');
+    this.scene.background = new THREE.Color('#eee7f5');
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.01, 10000);
     this.renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.25;
-    this.renderer.setClearColor('#eceae3', 1);
+    this.renderer.setClearColor('#eee7f5', 1);
     this.renderer.domElement.setAttribute('aria-label', 'Interactive 3D model. Drag to rotate, right-drag to pan, scroll to zoom.');
     this.renderer.domElement.setAttribute('role', 'img');
     this.renderer.domElement.tabIndex = 0;
@@ -102,7 +102,7 @@ export class ModelViewer {
     this.controls.dampingFactor = 0.085;
     this.controls.screenSpacePanning = true;
     this.controls.addEventListener('change', () => this.render());
-    this.scene.add(new THREE.HemisphereLight(0xffffff, 0xa8ab96, 2.1));
+    this.scene.add(new THREE.HemisphereLight(0xffffff, 0xaaaaaa, 2.1));
     const key = new THREE.DirectionalLight(0xffffff, 2.7);
     key.position.set(-400, 700, 500);
     this.scene.add(key);
@@ -199,7 +199,7 @@ export class ModelViewer {
     const size = this.bounds.getSize(new THREE.Vector3());
     const extent = Math.max(size.x, size.z, size.y * 0.7, 10);
     const gridSize = Math.ceil(extent * 1.8 / 10) * 10;
-    this.grid = new THREE.GridHelper(gridSize, 20, 0xa4a999, 0xcbd0c2);
+    this.grid = new THREE.GridHelper(gridSize, 20, 0xb0a3c0, 0xd3c9df);
     this.grid.position.y = -Math.max(extent / 2000, .02);
     this.grid.material.transparent = true;
     this.grid.material.opacity = .54;

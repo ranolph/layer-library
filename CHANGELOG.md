@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-11-20 v3 — Clean interface
+
+- Made the main panels, cards, header and dialogs pure white.
+- Replaced purple control fills and tinted text with neutral greys and graphite.
+- Kept the pale lavender page background and restrained purple selection accents.
+- Preserved the mobile GitHub footer below the complete workspace.
+- Refreshed every README screenshot to show the clean interface.
+
+## 2026-11-20 — Purple theme and mobile footer
+
+- Replaced the olive and brown interface tint with a soft purple palette that
+  matches the Layer Library icon, including menus, inputs and dialogs.
+- Matched the interactive preview background and grid to the purple palette,
+  with neutral ground lighting and unchanged model colours.
+- Kept the shared Studio fonts, header alignment and panel spacing.
+- Moved the GitHub footer after the complete workspace on mobile; long pages
+  now scroll naturally to the footer below the models and settings.
+- Refreshed every README screenshot using a separate demonstration library.
+- Left model files, saved collections, settings and printer workflows intact.
+
 ## Unreleased — Studio appearance
 
 - Matched Form Studio and Solid Studio typography, colours, header alignment,
